@@ -3,6 +3,10 @@ import React from 'react';
 
 const Form = (props) => {
 
+  //handleChanges
+
+  //submitForm
+
   return (
     <form>
       <label htmlFor="name">Name</label>
