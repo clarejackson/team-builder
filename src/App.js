@@ -32,11 +32,11 @@ function App() {
     <div className="App">
       <h1>Team Builder Form</h1>
       <Form teamMembers={teamMembers} setTeamMembers={setTeamMembers} />
-      {/* //map through results from useEffect to render li inside ul */}
-      {teamList.map((teamMember, index) => {
-        return <><h2 key={index}>{teamMember.name}</h2>
-        <p key={index}>{teamMember.role}</p>
-        <p key={index}>contact info: {teamMember.email}</p></>
+      {/* //map through results to render new teammates? */}
+      {teamMembers.map((teamMember, index) => {
+        return <div key={index}><h2>{teamMember.name}</h2>
+        <p>{teamMember.role}</p>
+        <p>contact info: {teamMember.email}</p></div>
       })}
     </div>
   );

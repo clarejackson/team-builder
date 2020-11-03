@@ -17,26 +17,23 @@ const { teamMembers, setTeamMembers } = props
   }
   console.log(teamMembers)
 
-  // const addNewMember = (member) => {
-  //   const newMember = {
-  //     id: Date.now(),
-  //     name: member.name,
-  //     role: member.role,
-  //     email: member.email
-  //   }
-  // }
-
   //submitForm
   const submitForm = (event) => {
     event.preventDefault()
-    setTeammate({
+    const newTeammate = {
           id: Date.now(),
-          name: teamMembers.name,
-          role: teamMembers.role,
-          email: teamMembers.email
-        })
-    setTeamMembers([...teamMembers, teammate])
+          name: teammate.name,
+          role: teammate.role,
+          email: teammate.email
+        }
+    setTeamMembers([...teamMembers, newTeammate])
+    setTeammate({
+      name: '',
+      email: '',
+      role: ''
+    })
   }
+  //clear input fields after submit
 
   return (
     <form onSubmit={submitForm}>
@@ -47,7 +44,7 @@ const { teamMembers, setTeamMembers } = props
       name="name"
       type="text"
       placeholder="Enter Name"
-      value={teamMembers.name}
+      value={teammate.name}
       onChange={handleChanges}
       required
       />
@@ -59,7 +56,7 @@ const { teamMembers, setTeamMembers } = props
       name="role"
       type="text"
       placeholder="Enter Roll"
-      value={teamMembers.role}
+      value={teammate.role}
       onChange={handleChanges}
       required
       />
@@ -71,7 +68,7 @@ const { teamMembers, setTeamMembers } = props
       name="email"
       type="email"
       placeholder="Enter Email"
-      value={teamMembers.email}
+      value={teammate.email}
       onChange={handleChanges}
       required
       />
