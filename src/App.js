@@ -32,7 +32,7 @@ function App() {
     <div className="App">
       <h1>Team Builder Form</h1>
       <Form teamMembers={teamMembers} setTeamMembers={setTeamMembers} />
-      {/* //map through results to render new teammates? */}
+      
       {teamMembers.map((teamMember, index) => {
         return <div key={index}><h2>{teamMember.name}</h2>
         <p>{teamMember.role}</p>
